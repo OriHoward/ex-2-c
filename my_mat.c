@@ -46,8 +46,7 @@ void input() {
     int i, j;
     for (i = 0; i < N; ++i) {
         for (j = 0; j < N; ++j) {
-            printf("enter a value for the matrix in [%d],[%d] - ", i, j);
-            scanf("%d", &mat[i][j]);
+            scanf(" %d", &mat[i][j]);
         }
     }
 }
@@ -65,8 +64,7 @@ void input() {
 // second + third function
 int findShortestPath() {
     int row, column;
-    printf("please enter a row number and a column number: ");
-    scanf("%d %d", &row, &column);
+    scanf(" %d %d", &row, &column);
     return shortPathMat[row][column];
 
 }
