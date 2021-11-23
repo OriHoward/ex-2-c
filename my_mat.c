@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "my_mat.h"
 
-#define N 4
+#define N 10
 int mat[N][N];
 int shortPathMat[N][N];
 
