@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include "my_mat.h"
 
-
 int main() {
     int exit = 1;
     char userInput = ' ';

@@ -51,17 +51,6 @@ void input() {
     }
 }
 
-
-// second function
-//int isPathExists() {
-//    int row, column;
-//    printf("please enter a row number and a column number: ");
-//    scanf("%d %d", &row, &column);
-//    return shortPathMat[row][column];
-//}
-
-
-// second + third function
 int findShortestPath() {
     int row, column;
     scanf(" %d %d", &row, &column);
