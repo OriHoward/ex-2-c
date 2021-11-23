@@ -2,26 +2,34 @@
 #include "my_mat.h"
 
 
-#define N 3
-
-
 int main() {
-    int mat[N][N];
     int exit = 1;
     char userInput = ' ';
-    while(exit) {
-        scanf("%c",&userInput);
-        if(userInput == 'A') {
-            input(mat);
-             // call function number 1
+    while (exit) {
+        scanf("%c", &userInput);
+        if (userInput == 'A') {
+            input();
+            copyMat();
+            createShortPathMatrix();
         }
-        if(userInput == 'B') {
-            continue; // call function number 2
+        if (userInput == 'B') {
+            int path = findShortestPath();
+            if (path) {
+                printf("True\n");
+            } else {
+                printf("False\n");
+            }
         }
-        if(userInput == 'C') {
-            continue; // call function number 3
+
+        if (userInput == 'C') {
+            int path = findShortestPath();
+            if (path) {
+                printf("%d\n", path);
+            } else {
+                printf("-1\n");
+            }
         }
-        if(userInput == 'D') {
+        if (userInput == 'D') {
             exit = 0; // exit
         }
     }

@@ -1,23 +1,17 @@
 CC = gcc
 CFLAGS = -Wall -Werror
 
-all: connections, mat
+all: connections
 
-mat: libclassmat.so
-
-connections: main.o libclassmat.so
-	${CC} ${CFLAGS} main.o -L . -lclassmat -o connections
-
-libclassmat.so: my_mat.o
-		${CC} ${CFLAGS} -shared my_mat.o -o libclassmat.so
-
+connections: main.o my_mat.o
+	${CC} ${CFLAGS}  main.o my_mat.o -o connections
 
 main.o: main.c my_mat.h
 	${CC} ${CFLAGS} -c main.c
 
-my_mat.o: my_mat.c
-	${CC} ${CFLAGS} -fPIC -c my_mat.c
+my_mat.o: my_mat.c my_mat.h
+	${CC} ${CFLAGS} -c my_mat.c
 
 
 clean:
-	rm -f *.a *.o *.so mains
+	rm -f *.a *.o *.so connections
