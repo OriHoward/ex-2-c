@@ -12,8 +12,7 @@ int main() {
             createShortPathMatrix();
         }
         if (userInput == 'B') {
-            int path = findShortestPath();
-            if (path) {
+            if (findShortestPath()) {
                 printf("True\n");
             } else {
                 printf("False\n");

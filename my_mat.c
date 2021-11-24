@@ -26,14 +26,14 @@ void copyMat() {
 // this function creates a matrix which the shortest paths
 void createShortPathMatrix() {
     for (int k = 0; k < N; ++k) {
-        for (int i = 0; i < N; ++i) {
-            for (int j = 0; j < N; ++j) {
-                if (i != j) {
-                    if (shortPathMat[i][k] != 0 && shortPathMat[k][j] != 0 && shortPathMat[i][j] == 0) {
-                        shortPathMat[i][j] = shortPathMat[i][k] + shortPathMat[k][j];
+        for (int row = 0; row < N; ++row) {
+            for (int column = 0; column < N; ++column) {
+                if (row != column) {
+                    if (shortPathMat[row][k] != 0 && shortPathMat[k][column] != 0 && shortPathMat[row][column] == 0) {
+                        shortPathMat[row][column] = shortPathMat[row][k] + shortPathMat[k][column];
                     }
-                    if (shortPathMat[i][k] != 0 && shortPathMat[k][j] != 0 && shortPathMat[i][j] != 0) {
-                        shortPathMat[i][j] = min(shortPathMat[i][j], shortPathMat[i][k] + shortPathMat[k][j]);
+                    if (shortPathMat[row][k] != 0 && shortPathMat[k][column] != 0 && shortPathMat[row][column] != 0) {
+                        shortPathMat[row][column] = min(shortPathMat[row][column], shortPathMat[row][k] + shortPathMat[k][column]);
                     }
                 }
             }
@@ -43,10 +43,9 @@ void createShortPathMatrix() {
 
 // first function - takes input from the user which is the values of the matrix
 void input() {
-    int i, j;
-    for (i = 0; i < N; ++i) {
-        for (j = 0; j < N; ++j) {
-            scanf(" %d", &mat[i][j]);
+    for (int row = 0; row < N; ++row) {
+        for (int column = 0; column < N; ++column) {
+            scanf(" %d", &mat[row][column]);
         }
     }
 }
